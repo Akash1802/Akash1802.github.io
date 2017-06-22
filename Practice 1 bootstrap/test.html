@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap Css-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+   
+    <select id="selectCountries" multiple="multiple">
+		<option value="USA">Unites States</option>
+		<option value="IND">INDIA</option>
+		<option value="UK">Unites KINGDOM</option>
+		<option value="CA">Canada</option>
+		<option value="AU">Australia</option>
+	</select>
+	<br><br>
+	<div id="divResult"></div>
+
+    <!--Bootstrap jQuery-->
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+	$('#selectCountries').change(function() {
+		var selectedOptions = $('#selectCountries option:selected');
+		if (selectedOptions.length > 0)
+		{
+			var resultString = "";
+			selectedOptions.each(function () {
+				resultString += "Value = " + $(this).val() +" Text = " + $(this).text() +"<br>";
+			});
+			$('#divResult').html(resultString);
+		}
+	});
+  });	
+  </script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
